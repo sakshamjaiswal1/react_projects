@@ -68,9 +68,16 @@
     display: block;
   }
 
-  /* Netlify injects this badge on deploy; it covers the mobile bottom nav */
-  #nl-badge {
+  /* Netlify HUD badge covers the mobile bottom nav on deploy */
+  #nl-badge,
+  #nl-badge-frame,
+  iframe[src*='app.netlify.com/scripts/hud'] {
     display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
   }
 }
 
