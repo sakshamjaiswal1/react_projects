@@ -67,6 +67,11 @@
     max-width: 100%;
     display: block;
   }
+
+  /* Netlify injects this badge on deploy; it covers the mobile bottom nav */
+  #nl-badge {
+    display: none !important;
+  }
 }
 
 @layer utilities {
