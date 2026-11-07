@@ -14,12 +14,12 @@ export function Hero() {
         target="_blank"
         rel="noreferrer"
         className="absolute inset-0 block"
-        aria-label="View sportswear reel on Instagram"
+        aria-label="View HYROX Birmingham race day post on Instagram"
       >
         <motion.img
           src={heroMedia.image}
-          alt="Jade training in activewear"
-          className="h-full w-full object-cover object-[center_20%] transition-transform duration-700 hover:scale-[1.02]"
+          alt="Jade on HYROX Birmingham race day"
+          className="h-full w-full object-cover object-[center_30%] transition-transform duration-700 hover:scale-[1.02]"
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
@@ -28,11 +28,12 @@ export function Hero() {
           className="pointer-events-none absolute inset-0"
           style={{ background: 'var(--hero-overlay)' }}
         />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[var(--bg)] via-[color-mix(in_oklab,var(--bg)_72%,transparent)] to-transparent md:h-[40%] md:via-[color-mix(in_oklab,var(--bg)_45%,transparent)]" />
       </a>
 
-      <div className="pointer-events-none relative z-10 flex min-h-[100svh] flex-col justify-end px-[clamp(1.25rem,4vw,4rem)] pb-16 pt-28 md:pb-24">
+      <div className="pointer-events-none relative z-10 flex min-h-[100svh] flex-col justify-end px-[clamp(1.25rem,4vw,4rem)] pt-28 pb-[calc(7rem+env(safe-area-inset-bottom))] md:pb-24">
         <motion.p
-          className="mb-4 text-[0.8rem] tracking-[0.28em] uppercase text-[var(--fg-muted)]"
+          className="mb-4 text-[0.75rem] tracking-[0.28em] uppercase text-[var(--fg-muted)] sm:text-[0.8rem]"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7 }}
@@ -41,7 +42,7 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          className="font-display max-w-[14ch] text-[clamp(3.2rem,11vw,7.5rem)] leading-[0.9] font-extrabold tracking-[-0.03em] text-balance"
+          className="font-display max-w-[14ch] text-[clamp(2.45rem,10vw,7.5rem)] leading-[0.92] font-extrabold tracking-[-0.03em] text-balance"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
@@ -51,7 +52,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mt-6 max-w-md text-base text-[var(--fg-muted)] md:text-lg"
+          className="mt-5 max-w-md text-[0.95rem] text-[var(--fg-muted)] sm:mt-6 sm:text-base md:text-lg"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.7 }}
@@ -61,7 +62,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div
-          className="pointer-events-auto mt-8 flex flex-wrap gap-3"
+          className="pointer-events-auto mt-7 flex flex-wrap gap-3 sm:mt-8"
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.65 }}

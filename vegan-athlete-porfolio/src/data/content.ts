@@ -19,7 +19,7 @@ export const about = {
   eyebrow: 'The story',
   title: 'Started at 36. Still becoming.',
   body: [
-    'Jade started the gym at 36 because she needed something for herself — after kids, life changes, and a separation that left her unsure who she was becoming.',
+    'Jade started the gym at 36 because she needed something for herself — after kids and life changes, she wanted to feel stronger again.',
     'One workout became another. Then running. Then her first HYROX. The biggest transformation was not her body — it was rebuilding confidence and identity again.',
     'Now she trains vegan, races hard, and documents the messy, funny, real side of fitness as a mum. Strong and feminine. Never too late to start.',
   ],
@@ -203,6 +203,6 @@ export const brands = {
 }
 
 export const heroMedia = {
-  image: '/images/sportswear.jpg',
-  href: 'https://www.instagram.com/veganmileswithjade/reel/DeezfaJidVr/',
+  image: '/images/hyrox-raceday.jpg',
+  href: 'https://www.instagram.com/veganmileswithjade/p/DfQF1MBgs7C/',
 }
