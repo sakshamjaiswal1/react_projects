@@ -1,58 +1,19 @@
+import { Dumbbell, Home, Images, Sparkles, UserRound } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { mobileNavItems } from '../data/nav'
 
-function NavIcon({ id, active }: { id: string; active: boolean }) {
-  const stroke = active ? 'var(--accent)' : 'currentColor'
-  const common = {
-    width: 22,
-    height: 22,
-    viewBox: '0 0 24 24',
-    fill: 'none',
-    stroke,
-    strokeWidth: 1.75,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
-    'aria-hidden': true as const,
-  }
+const icons = {
+  top: Home,
+  about: UserRound,
+  hyrox: Dumbbell,
+  lookbook: Images,
+  brands: Sparkles,
+} as const
 
-  switch (id) {
-    case 'top':
-      return (
-        <svg {...common}>
-          <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z" />
-        </svg>
-      )
-    case 'about':
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="8" r="3.25" />
-          <path d="M5.5 19.5c1.6-3.2 4-4.8 6.5-4.8s4.9 1.6 6.5 4.8" />
-        </svg>
-      )
-    case 'hyrox':
-      return (
-        <svg {...common}>
-          <path d="M7 20V9.5L12 4l5 5.5V20" />
-          <path d="M10 20v-5h4v5" />
-        </svg>
-      )
-    case 'lookbook':
-      return (
-        <svg {...common}>
-          <rect x="4" y="5" width="16" height="14" rx="2" />
-          <circle cx="9" cy="10" r="1.5" />
-          <path d="m7 16 3.2-3.2a1 1 0 0 1 1.3 0L14 15l1.2-1.2a1 1 0 0 1 1.3 0L19 16" />
-        </svg>
-      )
-    case 'brands':
-      return (
-        <svg {...common}>
-          <path d="M12 3 14.5 9H21l-5 4 1.8 6L12 15.5 6.2 19 8 13 3 9h6.5L12 3Z" />
-        </svg>
-      )
-    default:
-      return null
-  }
+function NavIcon({ id }: { id: string }) {
+  const Icon = icons[id as keyof typeof icons]
+  if (!Icon) return null
+  return <Icon size={22} strokeWidth={1.75} aria-hidden />
 }
 
 export function MobileBottomNav() {
@@ -105,7 +66,7 @@ export function MobileBottomNav() {
                 }`}
                 aria-current={active ? 'page' : undefined}
               >
-                <NavIcon id={item.sectionId} active={active} />
+                <NavIcon id={item.sectionId} />
                 <span className="font-medium">{item.shortLabel}</span>
               </a>
             </li>

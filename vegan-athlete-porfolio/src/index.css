@@ -14,23 +14,6 @@
 }
 
 :root,
-.light {
-  --bg: #f3efe6;
-  --bg-elevated: #ebe5d8;
-  --fg: #0c0f0e;
-  --fg-muted: #4a524e;
-  --accent: #2f6b57;
-  --accent-hover: #245445;
-  --line: rgba(12, 15, 14, 0.12);
-  --hero-overlay: linear-gradient(
-    105deg,
-    rgba(243, 239, 230, 0.92) 0%,
-    rgba(243, 239, 230, 0.55) 42%,
-    rgba(12, 15, 14, 0.35) 100%
-  );
-  color-scheme: light;
-}
-
 .dark {
   --bg: #0c0f0e;
   --bg-elevated: #151a18;

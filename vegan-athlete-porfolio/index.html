@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,19 +15,6 @@
       rel="stylesheet"
     />
     <title>Jade | Vegan Miles — HYROX & Vegan Athlete</title>
-    <script>
-      (() => {
-        const key = 'jade-theme'
-        const stored = localStorage.getItem(key)
-        const theme =
-          stored === 'light' || stored === 'dark'
-            ? stored
-            : window.matchMedia('(prefers-color-scheme: light)').matches
-              ? 'light'
-              : 'dark'
-        document.documentElement.classList.add(theme)
-      })()
-    </script>
   </head>
   <body>
     <div id="root"></div>

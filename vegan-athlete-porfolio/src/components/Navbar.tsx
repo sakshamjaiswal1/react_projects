@@ -1,13 +1,7 @@
 import { desktopNavItems } from '../data/nav'
 import { site } from '../data/site'
-import { ThemeToggle } from './ThemeToggle'
 
-type NavbarProps = {
-  theme: 'light' | 'dark'
-  onToggleTheme: () => void
-}
-
-export function Navbar({ theme, onToggleTheme }: NavbarProps) {
+export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b hairline bg-[color-mix(in_oklab,var(--bg)_78%,transparent)] backdrop-blur-md">
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-[clamp(1.25rem,4vw,4rem)] py-3">
@@ -31,15 +25,12 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          <a
-            href="#brands"
-            className="hidden rounded-full bg-[var(--accent)] px-4 py-2 text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[var(--bg)] transition-colors hover:bg-[var(--accent-hover)] sm:inline-flex"
-          >
-            Work with me
-          </a>
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-        </div>
+        <a
+          href="#brands"
+          className="hidden rounded-full bg-[var(--accent)] px-4 py-2 text-[0.75rem] font-semibold tracking-[0.08em] uppercase text-[var(--bg)] transition-colors hover:bg-[var(--accent-hover)] sm:inline-flex"
+        >
+          Work with me
+        </a>
       </nav>
     </header>
   )
