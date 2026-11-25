@@ -227,3 +227,18 @@ Use `muted`, `playsInline`, `loop`, and `preload="none"`. IntersectionObserver (
 Obtain media from accessible public pages and observed resources. Browser `blob:` URLs are temporary handles, not reusable sources. For separate video/audio tracks, obtain complete files, combine them, and verify browser decoding and audible output after unmuting. Do not save byte-range snippets as full reels. Do not bypass login walls or fabricate footage; report unavailable media.
 
 For photos, prefer original post-page images and the largest observed `srcset` candidates. Target ≥1600px hero width and ≥1080px journal width where available; retain the best accessible source when lower. Record real dimensions, generate smaller variants only, and use accurate width descriptors and layout-specific `sizes`. Check sharpness on desktop and ~390px mobile. Never upscale thumbnails or label them originals. Prioritize the hero with `fetchPriority="high"`; lazy-load below-fold photos.
+
+
+## Netlify account deployment
+
+Apply only when the user requests deployment; building a portfolio alone does not authorize publishing or Git pushes.
+
+1. Read the available Netlify deploy/config guidance and discover actual tools. Verify the authenticated user and team before creating or changing a project. Do not infer a successful account connection from plugin installation or a browser login. Plugin OAuth, browser sessions, and CLI authorization can be separate.
+2. Reuse a project already created for this portfolio. Otherwise create a new project in the verified account, record its returned ID immediately, and preserve unrelated sites. Never overwrite an existing professional portfolio based only on a similar name.
+3. Run `pnpm run build`. Keep `netlify.toml` configured with `pnpm run build` and publish directory `dist`. When editing that config, follow the Netlify config skill, including the schema key. Add `.netlify/` to `.gitignore` before linking; never commit CLI credentials, auth tickets, tokens, or local state.
+4. Prefer an available authenticated deployment/upload tool. If the connector exposes project-management tools but no file-upload operation, use the official Netlify CLI. Check CLI authentication independently; if required, use `netlify login --request "Deploy this portfolio"`, give the user its authorization URL, then finish with `netlify login --check <ticket>` after approval. Never extract connector tokens or browser cookies. Do not store auth links or tickets in source files.
+5. Deploy the verified build to the recorded project: `netlify deploy --prod --dir dist --no-build --site <site-id> --json`. Use the official CLI via a temporary package runner if it is not installed; keep the app's pnpm setup intact. A manual deployment to a Git-linked site can be replaced by a later push; disclose that when relevant.
+6. Verify the deploy is ready, belongs to the intended account, and is public without password/SSO requirements. Use the available visitor-access tool when the user requests public access; if unavailable, use the dashboard. Never claim settings cannot be changed through tools without checking the current tool inventory.
+7. Request the live homepage without authentication and verify portfolio content rather than a password page. Check a local reel URL returns `video/mp4` and supports playback/range requests. Report the permanent HTTPS production URL and any verification limits. A created-but-empty project or an unclaimed temporary Drop URL is not a completed account deployment.
+
+For Git handoff, commit and push only when requested. Stage only the intended portfolio/skill changes, exclude generated builds and local credentials, and verify the push result before reporting success.

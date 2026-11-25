@@ -144,6 +144,12 @@ Mobile ~390px: hero readable, no caption clash or horizontal overflow, bottom na
 
 Report: project path, handle used, `pnpm run dev` URL. Do **not** git commit, push, or Netlify-deploy unless asked.
 
+## Netlify deployment (when requested)
+
+Use the authenticated Netlify account for deployment. Read [reference.md](reference.md#netlify-account-deployment) for the account, upload, and verification workflow. Default a requested portfolio deployment to a public site with no password or SSO requirement, unless the user specifies restricted access. Do not use anonymous Netlify Drop for an account deployment: its temporary, password-protected result does not fulfill this request.
+
+Keep reel autoplay muted by default; visitors can mute/unmute with the sound control. Verify local reel files are included in the production build and served successfully after deployment.
+
 ## Design rules (non-negotiable)
 
 - Brand-first hero; one composition; no dashboard clutter in first viewport
