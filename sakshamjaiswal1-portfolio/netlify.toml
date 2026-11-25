@@ -1,0 +1,14 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+# pnpm 12 (packageManager in package.json) needs a current Node on Netlify's builders.
+[build.environment]
+  NODE_VERSION = "22"
+
+# Vite fingerprints JS and CSS under /assets. Those files can stay in the browser
+# for a year. HTML is left on Netlify's default (revalidate), so a new deploy shows up.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
